@@ -1,5 +1,5 @@
 %% ELE 532 LAB 2: FOURIER SERIES ANALYSIS USING MATLAB
-% AUTHORS: ISAAC ANG 500776093 REHUBA FAIROJ
+% AUTHORS: ISAAC ANG 500776093
 %
 %% A.1
 % Derive the expression for the Exponential Fourier Series
@@ -385,67 +385,3 @@ syms t
 coef = int((func.*exp(-1j.*n.*w.*t)),t,-5,5); %integrating the values to find the Dn 
 Dn = coef.*(1/To); %multiplying the integrand by 1/To, as per the equation
 end
-
-%% B.1
-% Determine the fundamental frequencies of x1, x2 and x3
-%
-% The fundamental frequency of A.1 is pi/10 as the highest common factor of
-% the numerator is pi and the lowest common multiple of the denominator is
-% 10. The fundamental frequency of x2 is given by using the graph and using
-% the formulae (fundamental frequency = (2*pi)/period)=2*pi/20=pi/10. Using
-% the same equation one can find that the fundamentl frequency of x3 is
-% pi/20.
-%
-% #$w_0$1 = \pi/10
-% #$w_0$2 = \pi/10
-% #$w_0$3 = \pi/40
-%% B.2
-% What is the main difference between the Fourier coefficients of x1 and
-% x2?
-%
-% The difference betwene the coefficients of x1(t) are finite while the
-% coefficients of x2(t) is an infinite set of numbers
-%% B.3
-% Signals x2 and x3 have the same rectangular pulse shape but different
-% periods. How are these characteristics reflected in their respective
-% Fourier coefficients?
-%
-% The coefficients of x2 are only where n is even while for x3, the
-% coefficients are only possible where n is at intervals of multiples of 4. The
-% coefficients of x2 are multiples of 0.5/pi where as the coefficients of
-% x3 are multiples of 0.25/pi
-%% B.4
-% Derive Do of x4 from Do of x2
-%
-% Theere is a 0.5 shift down from the x2 value of D0 therefore the D0 value
-% of X4 is 0 according to the formula; Dnx4=0.5Dnx2 and
-% Dnx2=(sin(pi*n/2))(n*pi)
-%% B.5
-% Explain how the reconstructed signal changes as you increase the number
-% of Fourier Coefficients used in the reconstruction
-%
-% As the number of Coefficients increased, the more the reconstructed
-% signal resembled the original waveform. 
-%% B.6
-%
-% In order to perfectly reconstruct the periodic waveforms, an infinite
-% number of Fourier Coefficients is required. During this lab, it was noted
-% that as the range of n increased, the reconstructed waveform began to
-% resemble the the original function. Therefore, the value of n would need
-% to be inifite in order to perfectly reconstruct the periodic waveform.
-%
-%% B.7
-%
-% This is a viable senario. If x(t) was an analog signal, it would not be
-% possible to store the signal on a computer as computers are digital
-% machines and cannot store exact sinusoids. In this case, it would be
-% viable to store the Fourier coefficients in order to reconstruct the
-% signal. 
-% However, if the signal was like x2 , square waves, it would make more
-% sense to store it as is rather than reconstruct it from its Fourier
-% coefficients. This is because, as evident from this lab, it takes a very
-% long time for the computer to reconsutrct the signal and therefore would
-% not make any sense to reconstruct the signal in this case. 
-%
-% Therefore, it is based on the signal that we are storing that affects our
-% decision. 
